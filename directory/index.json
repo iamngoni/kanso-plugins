@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "serial": 2,
+  "serial": 3,
   "plugins": [
     {
       "id": "app.kanso.sample.barchart",
@@ -107,5 +107,11 @@
       "revoked": false
     }
   ],
-  "revoked": []
+  "revoked": [
+    {
+      "id": "app.kanso.sample.wordcount",
+      "versions": "=1.0.1",
+      "reason": "Withdrawn to check that Kanso turns a withdrawn version off."
+    }
+  ]
 }
