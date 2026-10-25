@@ -14,7 +14,7 @@ function counted(text) {
 kanso.commands.register({
   id: 'count-words',
   title: 'Count words',
-  keywords: ['words', 'length'],
+  keywords: ['words', 'length', 'count'],
   when: 'note-open',
   run: () => {
     const id = kanso.editor.noteId();
