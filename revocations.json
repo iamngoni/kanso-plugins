@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "id": "app.kanso.sample.wordcount",
+    "versions": "=1.0.1",
+    "reason": "Withdrawn to check that Kanso turns a withdrawn version off."
+  }
+]
