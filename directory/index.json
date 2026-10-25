@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "serial": 3,
+  "serial": 4,
   "plugins": [
     {
       "id": "app.kanso.sample.barchart",
@@ -104,6 +104,43 @@
         "network": []
       },
       "publishedAt": "2026-10-25T22:56:24Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.sample.wordcount",
+      "name": "Word count",
+      "publisher": "Kanso",
+      "description": "Counts the words in the open note or the selection, and shows a panel of the notes changed most recently.",
+      "version": "1.0.2",
+      "sha256": "05e364352cd15b6ccb4540583f56661b989cd52ae55c5b5b02cf01254b2fcf1d",
+      "size": 1441,
+      "signer": "ed25519:8a76fdb08ac2652d1348b49f4b6da0fa6e4f97d1ee7de3babf29ebadba71370c",
+      "authorSignature": "mDjteJw6hbWtKyeFH+8ENynS7eoJtNPD2iQDloQCOaRtZzGftZahYJBwaTcmADRDai9r0SDtE/wMCOWvabpcAg==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read",
+          "selection.read",
+          "selection.replace"
+        ],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-10-25T23:06:50Z",
       "revoked": false
     }
   ],
