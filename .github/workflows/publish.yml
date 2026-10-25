@@ -1,0 +1,148 @@
+name: Publish the directory
+# Validate on main, then build read-only, sign in the protected `directory`
+# environment, and publish from a separate job that can write. The signing
+# key is in exactly one step's environment and never reaches the job that
+# writes to the repository.
+#
+# `workflow_run` with `branches: [main]` can match a fork pull request whose
+# head branch is named `main`, so every job also checks that this run came
+# from a push to this repository's own main. Nothing from a fork ever reaches
+# a job that runs the builder, the signer or the key.
+on:
+  workflow_run:
+    workflows: ["Validate plugins"]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency: directory-publish
+
+jobs:
+  build:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_repository.full_name == github.repository &&
+      github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out the exact validated commit
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
+      - name: Take the published directory from the tip of main
+        # The validated commit can be older than main by the time this runs;
+        # the next serial must follow what main publishes.
+        run: |
+          git fetch --no-tags --depth=1 origin main
+          rm -rf build && mkdir -p build
+          if git cat-file -e origin/main:directory/index.json 2>/dev/null; then
+            git archive origin/main directory | tar -x -C build --strip-components=1
+          fi
+      - name: Build the pinned kanso-plugin
+        run: echo "KANSO_PLUGIN=$(scripts/kanso-plugin.sh)" >> "$GITHUB_ENV"
+      - name: Build the next directory
+        run: |
+          previous=()
+          [ -f build/index.json ] && previous=(--previous build/index.json)
+          "$KANSO_PLUGIN" build-directory --plugins plugins --out build \
+            --revocations revocations.json "${previous[@]}" \
+            --published-at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" | tee build-log.txt
+          if grep -q "The directory is unchanged." build-log.txt; then
+            echo "unchanged" > build/.unchanged
+          fi
+          cp "$KANSO_PLUGIN" build-tool
+      - name: Upload the build
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: directory-build
+          path: |
+            build/
+            build-tool
+          include-hidden-files: true
+          if-no-files-found: error
+
+  sign:
+    needs: build
+    runs-on: ubuntu-latest
+    # Requires a reviewer. The key is a secret of this environment only.
+    environment: directory
+    permissions:
+      contents: read
+    steps:
+      - name: Download the build
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: directory-build
+          path: .
+      - name: Sign the exact index bytes
+        env:
+          KANSO_PLUGIN_REGISTRY_KEY: ${{ secrets.KANSO_PLUGIN_REGISTRY_KEY }}
+        run: |
+          chmod +x build-tool
+          if [ -f build/.unchanged ]; then
+            echo "The directory is unchanged; nothing to sign."
+            exit 0
+          fi
+          test -n "${KANSO_PLUGIN_REGISTRY_KEY:-}" || {
+            echo "The directory environment has no KANSO_PLUGIN_REGISTRY_KEY." >&2
+            exit 1
+          }
+          ./build-tool index-sign build/index.json
+      - name: Check it as Kanso will
+        run: |
+          [ -f build/.unchanged ] || ./build-tool verify-directory build
+      - name: Upload the signed directory
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: directory-signed
+          path: build/
+          include-hidden-files: true
+          if-no-files-found: error
+
+  publish:
+    needs: sign
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out main with the built-in token
+        # Its pushes don't start other workflows, which is wanted here.
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          ref: main
+      - name: Download the signed directory
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: directory-signed
+          path: signed/
+      - name: Commit and push once
+        run: |
+          if [ -f signed/.unchanged ]; then
+            echo "The directory is unchanged."
+            exit 0
+          fi
+          rm -rf directory && mkdir -p directory
+          cp -R signed/. directory/
+          rm -f directory/.unchanged
+          git config user.name "kanso-plugins"
+          git config user.email "kanso-plugins@users.noreply.github.com"
+          git add directory
+          if git diff --cached --quiet; then
+            echo "The directory is unchanged."
+            exit 0
+          fi
+          git commit -m "Publish the plugin directory [skip ci]"
+          # A publication that landed since this build started would make
+          # this index reuse a serial, which every Kanso refuses: fail then.
+          git fetch origin main
+          if ! git merge-base --is-ancestor origin/main HEAD; then
+            echo "main moved since this build started; run it again." >&2
+            exit 1
+          fi
+          git push origin HEAD:main

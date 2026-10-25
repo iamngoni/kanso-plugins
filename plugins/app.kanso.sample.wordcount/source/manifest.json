@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.sample.wordcount",
+  "name": "Word count",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:8a76fdb08ac2652d1348b49f4b6da0fa6e4f97d1ee7de3babf29ebadba71370c"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Counts the words in the open note or the selection, and shows a panel of the notes changed most recently.",
+  "permissions": {
+    "commands": true,
+    "editor": [
+      "note.read",
+      "selection.read",
+      "selection.replace"
+    ],
+    "notes": {
+      "read": {
+        "books": [],
+        "tags": [],
+        "all": false
+      }
+    },
+    "ui": [
+      "panel"
+    ]
+  }
+}

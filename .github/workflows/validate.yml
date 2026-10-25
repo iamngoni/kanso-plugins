@@ -1,0 +1,38 @@
+name: Validate plugins
+# Branches only: a tag named `main` must not look like a push to main to
+# publish.yml, which runs after this workflow.
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+      - name: Build the pinned kanso-plugin
+        run: echo "KANSO_PLUGIN=$(scripts/kanso-plugin.sh)" >> "$GITHUB_ENV"
+      - name: Build the directory as the app would check it
+        # Every plugin is packed, its manifest held to Kanso's rules and its
+        # author signature checked; a published version can't change, a new
+        # one must be newer and signed by the same key, and the revocations
+        # must be valid. Nothing is signed here.
+        run: |
+          mkdir -p build
+          cp -R directory/. build/ 2>/dev/null || true
+          previous=()
+          [ -f directory/index.json ] && previous=(--previous directory/index.json)
+          "$KANSO_PLUGIN" build-directory --plugins plugins --out build \
+            --revocations revocations.json "${previous[@]}" \
+            --published-at "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+      - name: Check what is published
+        run: |
+          if [ -f directory/index.json ]; then
+            "$KANSO_PLUGIN" verify-directory directory
+          fi

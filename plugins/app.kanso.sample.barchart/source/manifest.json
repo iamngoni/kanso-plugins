@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.sample.barchart",
+  "name": "Bar chart",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:8a76fdb08ac2652d1348b49f4b6da0fa6e4f97d1ee7de3babf29ebadba71370c"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Draws a bar chart from a barchart block of label: value lines.",
+  "permissions": {
+    "fences": [
+      {
+        "language": "barchart"
+      }
+    ]
+  }
+}
