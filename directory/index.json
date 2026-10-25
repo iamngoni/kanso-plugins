@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "serial": 1,
+  "plugins": [
+    {
+      "id": "app.kanso.sample.barchart",
+      "name": "Bar chart",
+      "publisher": "Kanso",
+      "description": "Draws a bar chart from a barchart block of label: value lines.",
+      "version": "1.0.0",
+      "sha256": "4495fa1dae7030c106eee60c57f132eefdb6cbc8eed2d49bd87f5d4349e717b2",
+      "size": 1250,
+      "signer": "ed25519:8a76fdb08ac2652d1348b49f4b6da0fa6e4f97d1ee7de3babf29ebadba71370c",
+      "authorSignature": "pYFURvj1b7q2w+/BBdPfth8+poNydTi9ZPfSBca/qQgcgVQIdc93iegpSAwvH2yMJN+XrnTj8Yg7SZdSTWSLDA==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": false,
+        "editor": [],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [
+          {
+            "language": "barchart"
+          }
+        ],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-10-25T22:43:04Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.sample.wordcount",
+      "name": "Word count",
+      "publisher": "Kanso",
+      "description": "Counts the words in the open note or the selection, and shows a panel of the notes changed most recently.",
+      "version": "1.0.0",
+      "sha256": "f4c2f8a4b71d1f8e81033a536d46973e61d22dcb0fe1e2e29590683d15d59fe9",
+      "size": 1435,
+      "signer": "ed25519:8a76fdb08ac2652d1348b49f4b6da0fa6e4f97d1ee7de3babf29ebadba71370c",
+      "authorSignature": "iHUfr/RJIoCt8ajPccu6C2j3l/iI40TAc4v1mfVrOhy2mGANABHhPFGD3zV/ZMS2FQUKUy9P1UEi4GRyG+fOAw==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read",
+          "selection.read",
+          "selection.replace"
+        ],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-10-25T22:43:04Z",
+      "revoked": false
+    }
+  ],
+  "revoked": []
+}
