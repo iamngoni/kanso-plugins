@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.lookup",
+  "name": "Look up",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Looks up the selected word or phrase: definitions from the Free Dictionary API and a summary from Wikipedia, with a button to insert them after the selection.",
+  "permissions": {
+    "commands": true,
+    "editor": [
+      "selection.read",
+      "selection.replace"
+    ],
+    "ui": [
+      "panel"
+    ],
+    "network": [
+      "api.dictionaryapi.dev",
+      "en.wikipedia.org"
+    ]
+  }
+}

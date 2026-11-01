@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.cite",
+  "name": "Cite",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Turns a DOI in the selection into a formatted citation (APA, MLA or BibTeX) from Crossref, and builds a bibliography from every DOI in the open note.",
+  "permissions": {
+    "commands": true,
+    "editor": [
+      "note.read",
+      "selection.read",
+      "selection.replace"
+    ],
+    "notes": {
+      "read": {
+        "books": [],
+        "tags": [],
+        "all": false
+      },
+      "write": [
+        "notebooks"
+      ]
+    },
+    "ui": [
+      "panel"
+    ],
+    "network": [
+      "api.crossref.org"
+    ]
+  }
+}
