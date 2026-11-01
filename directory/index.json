@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "serial": 6,
+  "serial": 7,
   "plugins": [
     {
       "id": "app.kanso.abc",
@@ -191,6 +191,47 @@
       "revoked": false
     },
     {
+      "id": "app.kanso.cite",
+      "name": "Cite",
+      "publisher": "Kanso",
+      "description": "Turns a DOI in the selection into a formatted citation (APA, MLA or BibTeX) from Crossref, and builds a bibliography from every DOI in the open note.",
+      "version": "1.0.0",
+      "sha256": "8488f19a7704df8f1513bccc6236690d125d2072cd5904a27082faad4fca9bbb",
+      "size": 7338,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "Q6vRrGKPO8+Jt8BowHflIsdATQBqTJ+75qvHzN1r6xWju+oe+BL9nEC+B7h7lvgMaaxCGaL9aaSVOK6WRgv2Ag==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read",
+          "selection.read",
+          "selection.replace"
+        ],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "notebooks"
+          ],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": [
+          "api.crossref.org"
+        ]
+      },
+      "publishedAt": "2026-11-01T09:44:53Z",
+      "revoked": false
+    },
+    {
       "id": "app.kanso.convert",
       "name": "Convert",
       "publisher": "Kanso",
@@ -217,6 +258,46 @@
         "network": []
       },
       "publishedAt": "2026-11-01T09:38:29Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.daily-header",
+      "name": "Daily header",
+      "publisher": "Kanso",
+      "description": "Inserts a header with today's date and the weather for your city at the top of the open note, using Open-Meteo (no key needed).",
+      "version": "1.0.0",
+      "sha256": "b5a3775ad016c98e9fd5a626eff0dcab7c3173ba2cfa09808e5f67480e9b50ee",
+      "size": 5054,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "t3ksq7RTPfvFN2PeSWR6uoFTt2mPF1R9aGZr7ZMclobDviGqrO1sZPyjzOFOaLUo1QjYykGEdPYOlO6dUvicCA==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read"
+        ],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "notebooks"
+          ],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": [
+          "api.open-meteo.com",
+          "geocoding-api.open-meteo.com"
+        ]
+      },
+      "publishedAt": "2026-11-01T09:44:53Z",
       "revoked": false
     },
     {
@@ -540,6 +621,40 @@
       "revoked": false
     },
     {
+      "id": "app.kanso.lookup",
+      "name": "Look up",
+      "publisher": "Kanso",
+      "description": "Looks up the selected word or phrase: definitions from the Free Dictionary API and a summary from Wikipedia, with a button to insert them after the selection.",
+      "version": "1.0.0",
+      "sha256": "9b7dfecaab39a902f1011e33a0c73ce57c6c1ef6f98b25f174e2e7fd4193647d",
+      "size": 3889,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "X9vhAXqwdjz+sybNSdkpqlnRj1+D6KxErEkNZRDkt6E2rRZjC4l7elww/TRLidhMpWg+lonjk23zvCvVdViBCg==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "selection.read",
+          "selection.replace"
+        ],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": [
+          "api.dictionaryapi.dev",
+          "en.wikipedia.org"
+        ]
+      },
+      "publishedAt": "2026-11-01T09:44:53Z",
+      "revoked": false
+    },
+    {
       "id": "app.kanso.note-stats",
       "name": "Note stats",
       "publisher": "Kanso",
@@ -642,6 +757,88 @@
         "network": []
       },
       "publishedAt": "2026-11-01T09:38:29Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.raindrop",
+      "name": "Raindrop.io",
+      "publisher": "Kanso",
+      "description": "Imports bookmarks from a Raindrop.io collection as one note each, or as a single list note, and fetches only new bookmarks on later runs.",
+      "version": "1.0.0",
+      "sha256": "9febeb16512f3ba1b35452e7c19d1bbab27e47c7dc9ff6063988d53d3dbbdc3a",
+      "size": 6553,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "4jBPJ9eHQioq+muaMPfDFXbfQvtdNnW8fcj0vD5TdKUsSpZCXII4eAUuX7KCzZOu1VAMhytcCmzFeagiv+AUAw==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read"
+        ],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "notebooks"
+          ],
+          "create": true
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [
+          "token"
+        ],
+        "network": [
+          "api.raindrop.io"
+        ]
+      },
+      "publishedAt": "2026-11-01T09:44:53Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.readwise",
+      "name": "Readwise",
+      "publisher": "Kanso",
+      "description": "Imports your Readwise highlights as one note per book or article, and adds new highlights to the same note on later runs.",
+      "version": "1.0.0",
+      "sha256": "e8d041579f9d9e45367ebd7d58a2a59622114a34b460ebb4e69bfe69621214b9",
+      "size": 6042,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "9dXRax0EZm+MxfYcI68gHvP4y8esFWhAieycDO5QrOpEOKWP6k6/D+W+90qn9nrv0MYe5LW9kqUi/pj2Z3HkAA==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read"
+        ],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "notebooks"
+          ],
+          "create": true
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [
+          "token"
+        ],
+        "network": [
+          "readwise.io"
+        ]
+      },
+      "publishedAt": "2026-11-01T09:44:53Z",
       "revoked": false
     },
     {
@@ -935,6 +1132,47 @@
         "network": []
       },
       "publishedAt": "2026-11-01T09:38:29Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.todoist",
+      "name": "Todoist",
+      "publisher": "Kanso",
+      "description": "Pushes the open note's open - [ ] tasks to Todoist without duplicates, and ticks the boxes of tasks you completed there.",
+      "version": "1.0.0",
+      "sha256": "0bcb814548898bc5b741f95a0f40b3848708e7fdff41b5a77b7ae085beab784b",
+      "size": 4380,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "jxxymAMeSiwLs/h4H2SGWiihcnnnqhHYa7/MYjknlHf+WaY+gcOpcIgSWL5xx28oewlIjQbTAZVcKVWIVv4UBw==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read"
+        ],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "notebooks"
+          ],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [
+          "token"
+        ],
+        "network": [
+          "api.todoist.com"
+        ]
+      },
+      "publishedAt": "2026-11-01T09:44:53Z",
       "revoked": false
     },
     {
