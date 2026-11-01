@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.chart",
+  "name": "Charts",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:8a76fdb08ac2652d1348b49f4b6da0fa6e4f97d1ee7de3babf29ebadba71370c"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Draws bar, line, area and pie charts, with axes and a legend, from a chart block of CSV or label: value lines.",
+  "permissions": {
+    "fences": [
+      {
+        "language": "chart"
+      }
+    ]
+  }
+}
