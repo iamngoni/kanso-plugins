@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.todoist",
+  "name": "Todoist",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Pushes the open note's open - [ ] tasks to Todoist without duplicates, and ticks the boxes of tasks you completed there.",
+  "permissions": {
+    "commands": true,
+    "editor": [
+      "note.read"
+    ],
+    "notes": {
+      "read": {
+        "books": [],
+        "tags": [],
+        "all": false
+      },
+      "write": [
+        "notebooks"
+      ]
+    },
+    "ui": [
+      "panel"
+    ],
+    "secrets": [
+      "token"
+    ],
+    "network": [
+      "api.todoist.com"
+    ]
+  }
+}
