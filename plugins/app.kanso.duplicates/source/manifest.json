@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.duplicates",
+  "name": "Duplicate finder",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:8a76fdb08ac2652d1348b49f4b6da0fa6e4f97d1ee7de3babf29ebadba71370c"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Lists notes with near-identical titles or text, so you can merge or delete them yourself.",
+  "permissions": {
+    "commands": true,
+    "notes": {
+      "read": {
+        "books": [],
+        "tags": [],
+        "all": false
+      }
+    },
+    "ui": [
+      "panel"
+    ]
+  }
+}
