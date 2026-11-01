@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.github",
+  "name": "GitHub",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:8a76fdb08ac2652d1348b49f4b6da0fa6e4f97d1ee7de3babf29ebadba71370c"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Creates a GitHub issue from the selection and shows the state of the issue and pull request links in the open note.",
+  "permissions": {
+    "commands": true,
+    "editor": [
+      "note.read",
+      "selection.read"
+    ],
+    "notes": {
+      "read": {
+        "books": [],
+        "tags": [],
+        "all": false
+      },
+      "write": [
+        "notebooks you choose"
+      ]
+    },
+    "ui": [
+      "panel"
+    ],
+    "secrets": [
+      "token"
+    ],
+    "network": [
+      "api.github.com"
+    ]
+  }
+}
