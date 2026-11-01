@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.calc",
+  "name": "Calc table",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:8a76fdb08ac2652d1348b49f4b6da0fa6e4f97d1ee7de3babf29ebadba71370c"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Draws a pipe table whose cells can be formulas such as =SUM(B2:B4), with the computed values.",
+  "permissions": {
+    "fences": [
+      {
+        "language": "calc"
+      }
+    ]
+  }
+}
