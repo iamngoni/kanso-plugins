@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.writing-goals",
+  "name": "Writing goals",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "A daily word target with a progress bar and a streak, measured on the open note or on the words you added today.",
+  "permissions": {
+    "commands": true,
+    "editor": [
+      "note.read"
+    ],
+    "ui": [
+      "panel"
+    ]
+  }
+}
