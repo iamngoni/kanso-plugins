@@ -1,7 +1,70 @@
 {
   "schema": 1,
-  "serial": 5,
+  "serial": 6,
   "plugins": [
+    {
+      "id": "app.kanso.abc",
+      "name": "ABC music notation",
+      "publisher": "Kanso",
+      "description": "Draws ABC music notation in an abc block as a staff.",
+      "version": "1.0.0",
+      "sha256": "ede1ba4c8812073ae5731860048db37715c0b9854f30bf87e05e54551f47286f",
+      "size": 8411,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "LLM1SGgML0qTFBZJKu075NQTLNz56KoQlq9oQNuwtpBVYpXS/I2alx+emEhzQMEpMYEnKKUM4rm61c+R3GwpCA==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": false,
+        "editor": [],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [
+          {
+            "language": "abc"
+          }
+        ],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:38:29Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.boards",
+      "name": "Board diagrams",
+      "publisher": "Kanso",
+      "description": "Draws chess positions from FEN and Go positions from SGF or a list of moves.",
+      "version": "1.0.0",
+      "sha256": "d25c5a02cd0074d7c02c140614220ae9e2f8b1421338a91cdfe8c8a93ca35b1e",
+      "size": 6601,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "x8VwiYsg6L4vlVKzhMXCNZQzpyf+SM2LVosPoPo85W24/aIEJhfyptyoZLYBr9ZVSQGqFDMEp8u/eooyjyisDw==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": false,
+        "editor": [],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [
+          {
+            "language": "chess"
+          },
+          {
+            "language": "go"
+          }
+        ],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:38:29Z",
+      "revoked": false
+    },
     {
       "id": "app.kanso.bulk-tags",
       "name": "Bulk tags",
@@ -35,6 +98,36 @@
         "network": []
       },
       "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.calc",
+      "name": "Calc table",
+      "publisher": "Kanso",
+      "description": "Draws a pipe table whose cells can be formulas such as =SUM(B2:B4), with the computed values.",
+      "version": "1.0.0",
+      "sha256": "83a67e7937745b998f547e4e04254d5b416a4fcbe991df0d3944d7f0ddc329c2",
+      "size": 6363,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "uxKJazbzMZj3BnKDqgBMog51zNOSN/AFqR8IXI+M2kOHmu6hay1oMB2BgV5rXufspagk73eZADOjCvTtHxvoCw==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": false,
+        "editor": [],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [
+          {
+            "language": "calc"
+          }
+        ],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:38:29Z",
       "revoked": false
     },
     {
@@ -95,6 +188,35 @@
         "network": []
       },
       "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.convert",
+      "name": "Convert",
+      "publisher": "Kanso",
+      "description": "Converts units (length, mass, temperature, volume, speed, data sizes) and times between time zones, from selected text like \"5 km to mi\" or \"14:00 Harare in New York\".",
+      "version": "1.0.0",
+      "sha256": "43a385718a1553704ed98a1e4c3692ab4bf6f414c435d1d0942b687ff69b99f5",
+      "size": 9506,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "lExK9BWYt189nPrsK/6OyWJJjJZvwDqcNQl8ZDHrezgHgklAfAf3CZ61M6agZlrC5ikOP0kP4jwoCblzlj/yAQ==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "selection.read",
+          "selection.replace"
+        ],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:38:29Z",
       "revoked": false
     },
     {
@@ -200,6 +322,35 @@
         "network": []
       },
       "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.format",
+      "name": "Format",
+      "publisher": "Kanso",
+      "description": "Pretty-print or minify JSON and format SQL in the selection.",
+      "version": "1.0.0",
+      "sha256": "e1829278a6e96646bea3226dffc2dd9d950479099990b7d9daab802c01d5042e",
+      "size": 6021,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "kJ636yONuUthYzCLMIoqAegi5/7IuojlECT1W8POEqjqlF5jvWOGaLBPjAo8zrg6EzqQyyqGRlTST6X/jDyJDw==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "selection.read",
+          "selection.replace"
+        ],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:38:29Z",
       "revoked": false
     },
     {
@@ -464,6 +615,36 @@
       "revoked": false
     },
     {
+      "id": "app.kanso.qr",
+      "name": "QR code",
+      "publisher": "Kanso",
+      "description": "Draws the text of a qr block as a scannable QR code.",
+      "version": "1.0.0",
+      "sha256": "1e9ac52dbf3ad50abf1327913b584de65fdc89448cf3e17942e5af4d3919e9af",
+      "size": 5081,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "ReNo4K03xfplA+aGePTgfuYd7GAvctwzqfFt74IbEuPjwHAIOq7jmSMgS+duheHUzDRf5cOU4W1IlDfv3x1zAQ==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": false,
+        "editor": [],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [
+          {
+            "language": "qr"
+          }
+        ],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:38:29Z",
+      "revoked": false
+    },
+    {
       "id": "app.kanso.sample.barchart",
       "name": "Bar chart",
       "publisher": "Kanso",
@@ -605,6 +786,34 @@
       "revoked": false
     },
     {
+      "id": "app.kanso.selection-stats",
+      "name": "Selection stats",
+      "publisher": "Kanso",
+      "description": "Shows the words, characters, lines, sentences and reading time of the selection.",
+      "version": "1.0.0",
+      "sha256": "64813b8bc36994f8e95f4ef9d115d1f674d94b06dace618a8fd07ff1109f9b43",
+      "size": 2428,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "QKdxbMALESIQ/GsQUNsOnT2wrawxt9FbnvXpFjkwJ2uI3s3k7St83A4Tex72lyS4oIeMTfSLuAjzJv340TvYAA==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "selection.read"
+        ],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:38:29Z",
+      "revoked": false
+    },
+    {
       "id": "app.kanso.stale-notes",
       "name": "Stale notes",
       "publisher": "Kanso",
@@ -640,6 +849,35 @@
       "revoked": false
     },
     {
+      "id": "app.kanso.text-tools",
+      "name": "Text tools",
+      "publisher": "Kanso",
+      "description": "Sort, dedupe and reverse lines, change case, slugify, trim, turn lists into tables, align tables and insert lorem ipsum.",
+      "version": "1.0.0",
+      "sha256": "c4bd3ba199ece6b0e2f829f8eacf8397e18a769eb2b0e4e3f982ef5a1f35a3ad",
+      "size": 6262,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "EGlfWoATr5oVU0CpxnHzWBcVha70OFeSjnH3yLoQ6kY4ek521Qj8COQCRPYE/t8xUu/q9rHOl0CSBwMzRTBiAA==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "selection.read",
+          "selection.replace"
+        ],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:38:29Z",
+      "revoked": false
+    },
+    {
       "id": "app.kanso.timeline",
       "name": "Timeline",
       "publisher": "Kanso",
@@ -667,6 +905,36 @@
         "network": []
       },
       "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.toc",
+      "name": "Table of contents",
+      "publisher": "Kanso",
+      "description": "Inserts or refreshes a table of contents of the open note's headings, as links to heading anchors.",
+      "version": "1.0.0",
+      "sha256": "a13953abb7a96484e885c46f058745f40b52a7bf1aefe0095840e4a95f19491d",
+      "size": 3862,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "2j6ZH6mlULbWhbEmfXl4uHEAnA0TNTa99A0dTY5NdNtHdwt6QEFO8AxCAzGJpc4iSIIhEXDL5C75iHExTu/ADg==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read",
+          "selection.read",
+          "selection.replace"
+        ],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:38:29Z",
       "revoked": false
     },
     {
