@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.find-replace",
+  "name": "Find and replace",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Finds text across your notes, shows the matches note by note, and replaces them after you have looked.",
+  "permissions": {
+    "commands": true,
+    "notes": {
+      "read": {
+        "books": [],
+        "tags": [],
+        "all": false
+      },
+      "write": [
+        "Notes"
+      ]
+    },
+    "ui": [
+      "panel"
+    ]
+  }
+}

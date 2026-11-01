@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.stale-notes",
+  "name": "Stale notes",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Lists notes you have not changed in a while and can tag them #stale.",
+  "permissions": {
+    "commands": true,
+    "notes": {
+      "read": {
+        "books": [],
+        "tags": [],
+        "all": false
+      },
+      "write": [
+        "Notes"
+      ]
+    },
+    "ui": [
+      "panel"
+    ]
+  }
+}
