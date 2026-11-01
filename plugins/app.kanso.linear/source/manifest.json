@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.linear",
+  "name": "Linear",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Creates a Linear issue from the selection in a team you choose and shows the state of the Linear issues linked in the open note.",
+  "permissions": {
+    "commands": true,
+    "editor": [
+      "note.read",
+      "selection.read"
+    ],
+    "notes": {
+      "read": {
+        "books": [],
+        "tags": [],
+        "all": false
+      },
+      "write": [
+        "notebooks you choose"
+      ]
+    },
+    "ui": [
+      "panel"
+    ],
+    "secrets": [
+      "token"
+    ],
+    "network": [
+      "api.linear.app"
+    ]
+  }
+}
