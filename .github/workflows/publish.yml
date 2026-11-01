@@ -29,11 +29,37 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      actions: read
     steps:
-      - name: Check out the exact validated commit
+      - name: Pick the newest validated commit on main
+        # Publishes queue in one concurrency group, and GitHub keeps only the
+        # newest waiting run, so merges close together cancel each other's
+        # publishes. Build the newest commit on main whose validation passed
+        # (when it includes the trigger), so whichever publish runs last
+        # carries every merge. A merge still validating starts its own
+        # publish when it ends.
+        id: pick
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TRIGGER: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          git init -q "$RUNNER_TEMP/pick" && cd "$RUNNER_TEMP/pick"
+          git fetch -q --no-tags --filter=blob:none "https://github.com/$GITHUB_REPOSITORY" main
+          sha=$TRIGGER
+          for cand in $(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/validate.yml/runs?branch=main&event=push&status=success&per_page=20" \
+              --jq '.workflow_runs[] | select(.head_repository.full_name == env.GITHUB_REPOSITORY) | .head_sha'); do
+            # Only a commit on main that already contains the trigger.
+            if git merge-base --is-ancestor "$cand" FETCH_HEAD 2>/dev/null \
+              && git merge-base --is-ancestor "$sha" "$cand" 2>/dev/null; then
+              sha=$cand
+            fi
+          done
+          echo "Building $sha (triggered by $TRIGGER)"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - name: Check out the validated commit
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
-          ref: ${{ github.event.workflow_run.head_sha }}
+          ref: ${{ steps.pick.outputs.sha }}
           persist-credentials: false
       - name: Take the published directory from the tip of main
         # The validated commit can be older than main by the time this runs;
