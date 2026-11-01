@@ -7,7 +7,7 @@
   "entry": "main.js",
   "publisher": {
     "name": "Kanso",
-    "key": "ed25519:8a76fdb08ac2652d1348b49f4b6da0fa6e4f97d1ee7de3babf29ebadba71370c"
+    "key": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956"
   },
   "minAppVersion": "0.8.4",
   "description": "Draws dated items and date ranges from a timeline block as a timeline or a Gantt chart.",
