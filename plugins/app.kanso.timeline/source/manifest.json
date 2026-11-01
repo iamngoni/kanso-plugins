@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "apiVersion": 1,
+  "id": "app.kanso.timeline",
+  "name": "Timeline",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "publisher": {
+    "name": "Kanso",
+    "key": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956"
+  },
+  "minAppVersion": "0.8.4",
+  "description": "Draws dated items and date ranges from a timeline block as a timeline or a Gantt chart.",
+  "permissions": {
+    "fences": [
+      {
+        "language": "timeline"
+      }
+    ]
+  }
+}
