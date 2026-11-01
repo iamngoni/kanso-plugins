@@ -1,7 +1,468 @@
 {
   "schema": 1,
-  "serial": 4,
+  "serial": 5,
   "plugins": [
+    {
+      "id": "app.kanso.bulk-tags",
+      "name": "Bulk tags",
+      "publisher": "Kanso",
+      "description": "Adds, removes or renames a tag across many notes at once, from a panel.",
+      "version": "1.0.0",
+      "sha256": "ca48c9d059d2e34f4c87796f101e536824bb63f5f93bdf62eb942e6a2365431b",
+      "size": 4497,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "0k1r3Jg3DyIpNhV7jUgP7hwglrtYEloSqZ3me9XN06LUrIeqJRx+NvhHzOLtMBYe8GGg/ysst0rXDSnaYMM6DA==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "Notes"
+          ],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.calendar",
+      "name": "Month calendar",
+      "publisher": "Kanso",
+      "description": "Draws a calendar block as a month grid with the days you list marked.",
+      "version": "1.0.0",
+      "sha256": "594405725a62696f1003f0a12de133568a453fdb2820dd3401b98b22c29d6f08",
+      "size": 3275,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "7YMW37aln40JmjygPwAOyOnsSo+NPJQKSq7SP2L5wQ1jAsNHn1ju6RVr9lLiMf9sc4iwTaxQ+kX0dg3m+k7PBw==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": false,
+        "editor": [],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [
+          {
+            "language": "calendar"
+          }
+        ],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.chart",
+      "name": "Charts",
+      "publisher": "Kanso",
+      "description": "Draws bar, line, area and pie charts, with axes and a legend, from a chart block of CSV or label: value lines.",
+      "version": "1.0.0",
+      "sha256": "990a45c465733bf097a26584771dbc79a01af5ace811544f846bc20e321ea607",
+      "size": 5349,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "k/VJtR8sQxoy/wk0RoOsvUPjAM1VQTwp7FEkXGUVT+iSa8oaxt5wls/c4tVaKkUWRPpi9QRPUYNj9lv8sWvjDg==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": false,
+        "editor": [],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [
+          {
+            "language": "chart"
+          }
+        ],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.duplicates",
+      "name": "Duplicate finder",
+      "publisher": "Kanso",
+      "description": "Lists notes with near-identical titles or text, so you can merge or delete them yourself.",
+      "version": "1.0.0",
+      "sha256": "c8415c504b6f0478341adaf602102e4361c559db6492ec6cf1e3c23f4070822e",
+      "size": 4846,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "ZvunUC6RU6Rp9XQokOdI8w+1P7hPFzq1WM6hm7j2KLR1I3yhWU2CdNaX1KjKay2VDItCITgieETSuma6r4P/Ag==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.find-replace",
+      "name": "Find and replace",
+      "publisher": "Kanso",
+      "description": "Finds text across your notes, shows the matches note by note, and replaces them after you have looked.",
+      "version": "1.0.0",
+      "sha256": "0852516f8aed9004b9c9eb0ecd21a95cd731f599f10fc5bc7b41cc471904245d",
+      "size": 5414,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "CUMmVojDkcgEUPKQgHwLdjkSXvhacWUDBWabbEov1MLrA6Sz6OBBJTxh9mgyLI/G3SFh6gvnsWp2vd73OD/MAQ==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "Notes"
+          ],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.focus-log",
+      "name": "Focus log",
+      "publisher": "Kanso",
+      "description": "Start and Stop buttons that log a focus session to the open note, with today's total. There is no running timer.",
+      "version": "1.0.0",
+      "sha256": "76cf6b58757e5beae57d6098b197e8398ca5c14c48f040a508ed77a4aef8f02c",
+      "size": 4410,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "pjc6fpJLRrfwOGbksRwIuNj/n2gMSRSW4eDkpyMm7tSumolKWssRzgTun7+8dKGA6u58rw3SYFvXw0nZKMM7Ag==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read"
+        ],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "*"
+          ],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.github",
+      "name": "GitHub",
+      "publisher": "Kanso",
+      "description": "Creates a GitHub issue from the selection and shows the state of the issue and pull request links in the open note.",
+      "version": "1.0.0",
+      "sha256": "b224a88e8b09c6f7f21cbf848cf7b78249623141a9a33511b92baced10ec22e1",
+      "size": 5265,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "9NNVRaY9BWgAtocc8UiLP8Jq19CV83CtXRQwBufXzJdL0o7b+pJ0cUxSbtjubi7h/hghN/r+qieoSu/4mQL3DA==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read",
+          "selection.read"
+        ],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "notebooks you choose"
+          ],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [
+          "token"
+        ],
+        "network": [
+          "api.github.com"
+        ]
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.glossary",
+      "name": "Glossary",
+      "publisher": "Kanso",
+      "description": "Collects terms defined in your notes as Term:: definition lines or a Glossary section, searchable in a panel, with a button to insert a definition at the selection.",
+      "version": "1.0.0",
+      "sha256": "87dc3a7e38f2ac73331cd85686b9fa12aafdc3f0c53494d9ad0e92feec13fbff",
+      "size": 5553,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "C3+nmuPSA6tgu0zm9DIH80ySsDY1zFgYt5RixZtkIWtQU3CqGvXyEAVhfKrQFy68VEA//7o9QifihOth++v3CA==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read",
+          "selection.read",
+          "selection.replace"
+        ],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.kanban",
+      "name": "Kanban board",
+      "publisher": "Kanso",
+      "description": "Draws a kanban block of ## columns and - cards as a board, with done cards marked.",
+      "version": "1.0.0",
+      "sha256": "a8d3132b98731a48569aed7dc0289f97e8ae1e9ffef78dd068f6d098bafb2c85",
+      "size": 3167,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "Vunpl9keVFRUiSXMmP+6Zx/Ae6mHBZuywVtyrPMSrT63aYvtZS0YppWGU13IAW2M2yXxeyaURdfx3OALjFFQAQ==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": false,
+        "editor": [],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [
+          {
+            "language": "kanban"
+          }
+        ],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.linear",
+      "name": "Linear",
+      "publisher": "Kanso",
+      "description": "Creates a Linear issue from the selection in a team you choose and shows the state of the Linear issues linked in the open note.",
+      "version": "1.0.0",
+      "sha256": "921901b00d3860eda5705a512ba2ab7b3cbb95ca9a3b9c18dc5928f5a6affbe8",
+      "size": 5642,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "7DMKJq7H4EJi60e+qMcM1K7PSWzicOElQHsoQe54pfOLjAWc3/Cv8/mi8XUfN9S2MZl5Yc1zUPto09CPq6AuAQ==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read",
+          "selection.read"
+        ],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "notebooks you choose"
+          ],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [
+          "token"
+        ],
+        "network": [
+          "api.linear.app"
+        ]
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.link-fixer",
+      "name": "Link fixer",
+      "publisher": "Kanso",
+      "description": "Finds [[wikilinks]] that point at no note, suggests the closest titles, and fixes the ones you choose.",
+      "version": "1.0.0",
+      "sha256": "fc7fdf3b39a2d98b6d8fbcd322f53e5af3fd47ebdd5a6d015f65091a1d140107",
+      "size": 5918,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "eY3HtuXSyhOEPALzRafEOTXGsZyK3ME+mW5vZ3oA1DyN+MvD+W9RRJnFPTK75Sr2XDxWT6/29o8Rlh8o24SgDQ==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "Notes"
+          ],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.note-stats",
+      "name": "Note stats",
+      "publisher": "Kanso",
+      "description": "A panel for the open note: reading time, word count, heading outline, link, wikilink and task counts, and a Flesch reading ease score.",
+      "version": "1.0.0",
+      "sha256": "fd8a068df1541f840cffa6782e3f2f3639494373f5af3ee3ab78080d71853f01",
+      "size": 3596,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "CrQX/fC8oz+XIOO6NCBYNWTam2/ZEaHShYTLNgq47LYqNwSvq1BVZrxUO5hJnFQUGQ2ZaWBdRG0dK9LlGmWcCA==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read"
+        ],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.publish",
+      "name": "Publish",
+      "publisher": "Kanso",
+      "description": "Publishes the open note to dev.to, WordPress.com or Hashnode as a draft, and updates the same post when you publish again.",
+      "version": "1.0.0",
+      "sha256": "1dff38b4717483a3c48be42ece5a2a857daf1f6673b8bc5c1f342b3275ff3ffa",
+      "size": 7592,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "1pb5Uwf9OD76TDHhBnacDvw4k6CL9pnl0U5nk8jty4EjsKFP3QRfNxFG6owoftw2Fw1tNfTzBhEQVHRCdTQDDQ==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read"
+        ],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "notebooks you choose"
+          ],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [
+          "devto-key",
+          "hashnode-token",
+          "wordpress-token"
+        ],
+        "network": [
+          "dev.to",
+          "gql.hashnode.com",
+          "public-api.wordpress.com"
+        ]
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
     {
       "id": "app.kanso.sample.barchart",
       "name": "Bar chart",
@@ -141,6 +602,136 @@
         "network": []
       },
       "publishedAt": "2026-10-25T23:06:50Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.stale-notes",
+      "name": "Stale notes",
+      "publisher": "Kanso",
+      "description": "Lists notes you have not changed in a while and can tag them #stale.",
+      "version": "1.0.0",
+      "sha256": "4216cc2b9d101a56425e1707e69185a6b5ffbfe411ec850983170b586d60930c",
+      "size": 3700,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "yVfCxiK5DinpuvQUjZCpQWMlNNAV89M+RTEXQKuS5kqg1CGdOOJLMd0mfHbc+ycS1QddyXrP6L8YLk4s+nCSDA==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "Notes"
+          ],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.timeline",
+      "name": "Timeline",
+      "publisher": "Kanso",
+      "description": "Draws dated items and date ranges from a timeline block as a timeline or a Gantt chart.",
+      "version": "1.0.0",
+      "sha256": "7a3e2e5c50b3a17a4e650d0a973448e75d7216000575d519213ef921a75c5f20",
+      "size": 4062,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "xeWIeJg9ffLvaJgOHjIN71cQ1c+y1LfLfugCHMILapgic6xCf8qydCOWkVkcG6j03uxdileX9ydtCBGfgCADCg==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": false,
+        "editor": [],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [
+          {
+            "language": "timeline"
+          }
+        ],
+        "ui": [],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.weekly-review",
+      "name": "Weekly review",
+      "publisher": "Kanso",
+      "description": "Makes a note listing what you created or changed in the last week, grouped by notebook, with links.",
+      "version": "1.0.0",
+      "sha256": "29c9f8417572502efb610891fce1bb88ae125281acd0ac255d2678813d3ada2e",
+      "size": 3765,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "b5lywhsUAiN8wdsQIP8VoOnD4baAQzkqDhmny0CUUXPwxbnb/vXVhDINnmdZMux5Z+HW40xHOWsjN5/Xwtj0Aw==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [],
+        "notes": {
+          "read": {
+            "books": [],
+            "tags": [],
+            "all": false
+          },
+          "write": [
+            "Notes"
+          ],
+          "create": true
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
+      "revoked": false
+    },
+    {
+      "id": "app.kanso.writing-goals",
+      "name": "Writing goals",
+      "publisher": "Kanso",
+      "description": "A daily word target with a progress bar and a streak, measured on the open note or on the words you added today.",
+      "version": "1.0.0",
+      "sha256": "967c5cf2b5a31d2712adc527bc3b3e2aaad25437b763a556d9bf2f6b3853cbd4",
+      "size": 3944,
+      "signer": "ed25519:ee31468e12241c40f3d6826d4b57992b88ce4e2eda9c25dd153cfa82d315a956",
+      "authorSignature": "sbpy5DbcbPKoAKXRdWz9Skj/XxwTgnqVY5O3i8H4R+8gXlhTQoGj5jmVMLls7EBDrDXCeJYI82FwEees+p1qCg==",
+      "minAppVersion": "0.8.4",
+      "permissions": {
+        "commands": true,
+        "editor": [
+          "note.read"
+        ],
+        "notes": {
+          "write": [],
+          "create": false
+        },
+        "fences": [],
+        "ui": [
+          "panel"
+        ],
+        "secrets": [],
+        "network": []
+      },
+      "publishedAt": "2026-11-01T09:35:31Z",
       "revoked": false
     }
   ],
